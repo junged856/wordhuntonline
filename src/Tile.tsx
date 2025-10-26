@@ -1,10 +1,11 @@
 import { type Dispatch, useState } from "react";
 import "./index.css";
 import { NUM_ROWS, NUM_COLS } from "./constants.ts";
+import { type TileObject } from "./App.tsx";
 
 interface Props {
-	tilesPressed: number[];
-	setTilesPressed: Dispatch<React.SetStateAction<number[]>>;
+	tilesPressed: TileObject[];
+	setTilesPressed: Dispatch<React.SetStateAction<TileObject[]>>;
 	letter: string;
 	idx: number;
 	x: number;
@@ -27,7 +28,7 @@ function Tile({ tilesPressed, setTilesPressed, letter, idx, x, y }: Props) {
 
 	function is_adjacent_to_last_selection(tile: { row: number; col: number }) {
 		const last_selected_pos = get_position(
-			tilesPressed[tilesPressed.length - 1]
+			tilesPressed[tilesPressed.length - 1].idx
 		);
 		if (
 			(last_selected_pos.row == -1 && last_selected_pos.col == -1) ||
@@ -46,17 +47,17 @@ function Tile({ tilesPressed, setTilesPressed, letter, idx, x, y }: Props) {
 		if (e.buttons === 1) {
 			console.log(`User entered ${pos.row + "," + pos.col}, index: ${idx}`);
 			if (
-				!tilesPressed.includes(idx) &&
+				!isPressed() &&
 				(tilesPressed.length === 0 || is_adjacent_to_last_selection(pos))
 			) {
-				setTilesPressed([...tilesPressed, idx]);
+				setTilesPressed([...tilesPressed, {letter: letter, idx: idx, x: x, y: y}]);
 			}
 			console.log(tilesPressed);
 		}
 	};
 
 	const isPressed = () => {
-		return tilesPressed.includes(idx);
+		return tilesPressed.some(tile => tile.idx === idx);
 	};
 
 	return (

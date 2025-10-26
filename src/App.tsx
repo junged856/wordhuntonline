@@ -1,51 +1,35 @@
 import { useState } from "react";
 import "./App.css";
 import Board from "./Board";
+import LinePath from "./LinePath";
+
+export interface TileObject {
+	letter: string;
+	idx: number;
+	x: number;
+	y: number;
+}
 
 function App() {
-	const [tilesPressed, setTilesPressed] = useState<number[]>([]);
+	const [tilesPressed, setTilesPressed] = useState<TileObject[]>([]);
 
-  // whenever mouse is released anywhere in the app, the tiles reset
+	// whenever mouse is released anywhere in the app, the tiles reset
 	const resetTiles = () => {
 		console.clear();
 		setTilesPressed([]);
 	};
 
 	return (
-		<div onMouseUp={resetTiles} className='window'>
-      <h1 className="game_title">WORD HUNT</h1>
+		<div onMouseUp={resetTiles} className="window">
+			<h1 className="game_title">WORD HUNT</h1>
 			<Board
 				letters="abcdefghijklmnop"
 				tilesPressed={tilesPressed}
 				setTilesPressed={setTilesPressed}
 			/>
+			<LinePath tilesPressed={tilesPressed}></LinePath>
 		</div>
 	);
-
-	// return (
-	//   <>
-	//     <div>
-	//       <a href="https://vite.dev" target="_blank">
-	//         <img src={viteLogo} className="logo" alt="Vite logo" />
-	//       </a>
-	//       <a href="https://react.dev" target="_blank">
-	//         <img src={reactLogo} className="logo react" alt="React logo" />
-	//       </a>
-	//     </div>
-	//     <h1>Vite + React</h1>
-	//     <div className="card">
-	//       <button onClick={() => setCount((count) => count + 1)}>
-	//         count is {count}
-	//       </button>
-	//       <p>
-	//         Edit <code>src/App.tsx</code> and save to test HMR
-	//       </p>
-	//     </div>
-	//     <p className="read-the-docs">
-	//       Click on the Vite and React logos to learn more
-	//     </p>
-	//   </>
-	// )
 }
 
 export default App;

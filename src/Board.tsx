@@ -1,17 +1,18 @@
 import "./index.css";
 import Tile from "./Tile";
-import { use, useState, type Dispatch, type SetStateAction } from "react";
+import { type Dispatch } from "react";
+import { type TileObject } from "./App";
 
 interface Props {
 	letters: string;
-	tilesPressed: number[];
-    setTilesPressed: Dispatch<React.SetStateAction<number[]>>;
+	tilesPressed: TileObject[];
+	setTilesPressed: Dispatch<React.SetStateAction<TileObject[]>>;
 }
 
-function Board({letters, tilesPressed, setTilesPressed}: Props) {
+function Board({ letters, tilesPressed, setTilesPressed }: Props) {
 	const board_size = 800;
 	const tile_size = 200;
-    const tile_spacing = 20;
+	const tile_spacing = 20;
 	const max_tiles_per_row = Math.floor(board_size / tile_size);
 
 	const letters_uppercase = [...letters].map((char) => {
@@ -25,8 +26,8 @@ function Board({letters, tilesPressed, setTilesPressed}: Props) {
 		return {
 			char: char,
 			idx: index,
-			x: tile_size * col + col*20,
-			y: tile_size * row + row*20,
+			x: tile_size * col + col * 20,
+			y: tile_size * row + row * 20,
 		};
 	});
 
