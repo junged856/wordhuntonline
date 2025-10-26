@@ -22,7 +22,7 @@ const LinePath = ({ tilesPressed }: Props) => {
 							y1={tile.y}
 							x2={nextTile.x}
 							y2={nextTile.y}
-							stroke="#ac0d0dff"
+							stroke="#ff0000ff"
 							strokeWidth="15px"
 							stroke-linecap="round"
 							style={{ transform: "translateX(100px) translateY(100px)" }}

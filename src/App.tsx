@@ -19,6 +19,14 @@ function App() {
 		setTilesPressed([]);
 	};
 
+	const getWordSelected = () => {
+		let selectedWord = "";
+		tilesPressed.map((tile) => {
+			selectedWord += tile.letter;
+		})
+		return selectedWord;
+	}
+
 	return (
 		<div onMouseUp={resetTiles} className="window">
 			<h1 className="game_title">WORD HUNT</h1>
@@ -28,6 +36,7 @@ function App() {
 				setTilesPressed={setTilesPressed}
 			/>
 			<LinePath tilesPressed={tilesPressed}></LinePath>
+			<h1 className="selected_letters">{getWordSelected()}</h1>
 		</div>
 	);
 }
