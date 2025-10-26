@@ -9,24 +9,24 @@ interface Props {
 }
 
 function Board({letters, tilesPressed, setTilesPressed}: Props) {
-	const boardSize = 800;
-	const tileSize = 200;
-    const tile_gap_size = 20;
-	const rowCapacity = Math.floor(boardSize / tileSize);
+	const board_size = 800;
+	const tile_size = 200;
+    const tile_spacing = 20;
+	const max_tiles_per_row = Math.floor(board_size / tile_size);
 
-	const uppercase = [...letters].map((char) => {
+	const letters_uppercase = [...letters].map((char) => {
 		return char.toUpperCase();
 	});
 
 	// array storing tile data
-	const tiles = uppercase.map((char, index) => {
-		let col = Math.floor(index % rowCapacity);
-		let row = Math.floor(index / rowCapacity);
+	const tiles = letters_uppercase.map((char, index) => {
+		let col = Math.floor(index % max_tiles_per_row);
+		let row = Math.floor(index / max_tiles_per_row);
 		return {
 			char: char,
 			idx: index,
-			x: tileSize * col + col*20,
-			y: tileSize * row + row*20,
+			x: tile_size * col + col*20,
+			y: tile_size * row + row*20,
 		};
 	});
 
