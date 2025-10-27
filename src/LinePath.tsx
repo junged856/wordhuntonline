@@ -8,8 +8,8 @@ const LinePath = ({ tilesPressed }: Props) => {
 	// console.log({x1, x2, y1, y2});
 	return (
 		<svg
-			width={`${800 + 3 * 20}px`}
-			height={800 + 3 * 20}
+			width={`${800 + 3 * 30}px`}
+			height={800 + 3 * 30}
 			className="line_path"
 			style={{ border: "10px solid black" }}
 		>

@@ -30,23 +30,22 @@
 }
 
 .selected_letters {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 500%;
-  color: rgb(67, 67, 67); /* Sets the text color to white */
-  -webkit-text-stroke-width: 3px; /* Sets the stroke width to 2 pixels */
-  -webkit-text-stroke-color: rgb(60, 59, 59); 
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 300%;
+	color: rgb(21, 21, 21); /* Sets the text color to white */
+	-webkit-text-stroke-width: 3px; /* Sets the stroke width to 2 pixels */
 }
 
 .board_div {
 	background-color: rgb(93, 56, 0);
 	position: relative;
-	width: calc(800px + 3 * 20px);
-	height: calc(800px + 3 * 20px);
+	width: calc(800px + 3 * 30px);
+	height: calc(800px + 3 * 30px);
 }
 
 .line_path {
 	position: absolute;
-	top: 209px; 
+	top: 209px;
 	pointer-events: none;
 	z-index: 10;
 	font-size: 100%;

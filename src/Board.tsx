@@ -26,8 +26,8 @@ function Board({ letters, tilesPressed, setTilesPressed }: Props) {
 		return {
 			char: char,
 			idx: index,
-			x: tile_size * col + col * 20,
-			y: tile_size * row + row * 20,
+			x: tile_size * col + col * 30,
+			y: tile_size * row + row * 30,
 		};
 	});
 

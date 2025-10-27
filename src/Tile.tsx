@@ -50,24 +50,27 @@ function Tile({ tilesPressed, setTilesPressed, letter, idx, x, y }: Props) {
 				!isPressed() &&
 				(tilesPressed.length === 0 || is_adjacent_to_last_selection(pos))
 			) {
-				setTilesPressed([...tilesPressed, {letter: letter, idx: idx, x: x, y: y}]);
+				setTilesPressed([
+					...tilesPressed,
+					{ letter: letter, idx: idx, x: x, y: y },
+				]);
 			}
 			console.log(tilesPressed);
 		}
 	};
 
 	const isPressed = () => {
-		return tilesPressed.some(tile => tile.idx === idx);
+		return tilesPressed.some((tile) => tile.idx === idx);
 	};
 
 	return (
 		<div
 			className={isPressed() ? "tile_div_pressed" : "tile_div"}
 			style={{ top: `${y}px`, left: `${x}px` }}
+			onMouseEnter={handleHold}
+			onMouseDown={handleHold}
 		>
 			<h1
-				onMouseEnter={handleHold}
-				onMouseDown={handleHold}
 				className="tile_letter"
 			>
 				{letter}
