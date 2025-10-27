@@ -30,6 +30,8 @@
 }
 
 .selected_letters {
+	position: absolute;
+	top: calc(210px + 800px + 3 * 30px);
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 300%;
 	color: rgb(21, 21, 21); /* Sets the text color to white */
@@ -38,14 +40,15 @@
 
 .board_div {
 	background-color: rgb(93, 56, 0);
-	position: relative;
+	position: absolute;
+	top: 210px;
 	width: calc(800px + 3 * 30px);
 	height: calc(800px + 3 * 30px);
 }
 
 .line_path {
 	position: absolute;
-	top: 210px;
+	top: 200px;
 	pointer-events: none;
 	z-index: 10;
 	font-size: 100%;

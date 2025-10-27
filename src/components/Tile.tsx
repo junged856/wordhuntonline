@@ -1,5 +1,5 @@
 import { type Dispatch, useState } from "react";
-import "./index.css";
+import "../assets/styles/index.css";
 import { NUM_ROWS, NUM_COLS } from "../utils/constants.ts";
 import { type TileObject } from "./App.tsx";
 

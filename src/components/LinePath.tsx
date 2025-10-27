@@ -1,4 +1,5 @@
 import type { TileObject } from "./App";
+import "../assets/styles/index.css";
 
 interface Props {
 	tilesPressed: TileObject[];

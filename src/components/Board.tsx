@@ -1,4 +1,4 @@
-import "./index.css";
+import "../assets/styles/index.css";
 import Tile from "./Tile";
 import { type Dispatch } from "react";
 import { type TileObject } from "./App";
