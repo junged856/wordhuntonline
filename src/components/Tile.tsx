@@ -1,6 +1,6 @@
 import { type Dispatch, useState } from "react";
 import "./index.css";
-import { NUM_ROWS, NUM_COLS } from "./constants.ts";
+import { NUM_ROWS, NUM_COLS } from "../utils/constants.ts";
 import { type TileObject } from "./App.tsx";
 
 interface Props {
@@ -70,11 +70,7 @@ function Tile({ tilesPressed, setTilesPressed, letter, idx, x, y }: Props) {
 			onMouseEnter={handleHold}
 			onMouseDown={handleHold}
 		>
-			<h1
-				className="tile_letter"
-			>
-				{letter}
-			</h1>
+			<h1 className="tile_letter">{letter}</h1>
 		</div>
 	);
 }

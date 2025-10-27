@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import Board from "./Board";
 import LinePath from "./LinePath";
 
@@ -23,9 +22,9 @@ function App() {
 		let selectedWord = "";
 		tilesPressed.map((tile) => {
 			selectedWord += tile.letter;
-		})
+		});
 		return selectedWord;
-	}
+	};
 
 	return (
 		<div onMouseUp={resetTiles} className="window">
