@@ -1,4 +1,0 @@
-// class TrieNode {
-//     children: TrieNode[];
-
-// }
